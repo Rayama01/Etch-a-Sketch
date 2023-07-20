@@ -10,6 +10,7 @@ body{
     max-width: 500px;
     max-height: 500px;
     margin: 0 auto;
+    margin-top: 2%;
 }
 
 
@@ -25,4 +26,16 @@ body{
 
 .headingDiv {
     text-align: center;
+}
+
+.buttonsDiv {
+    text-align: center;
+}
+
+.buttonsDiv button {
+    font-size: 18px;
+    border-style: none;
+    border-radius: 5px;
+    background-color: rgb(144, 161, 175);
+    color: white;
 }
