@@ -10,7 +10,6 @@ body{
     max-width: 500px;
     max-height: 500px;
     margin: 0 auto;
-    margin-top: 5%;
 }
 
 
@@ -21,4 +20,9 @@ body{
     border: 1px solid black;
     box-sizing: border-box;
     padding: 10px;
+}
+
+
+.headingDiv {
+    text-align: center;
 }
