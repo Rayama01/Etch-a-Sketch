@@ -1,15 +1,19 @@
 const contain = document.querySelector(".container");
-let defaultBtn = document.querySelector(".defaultBtn");
+const defaultBtn = document.querySelector(".defaultBtn");
 const newGridBtn = document.querySelector(".newGridBtn");
+const blackBtn = document.querySelector(".blackBtn");
+const rainbowBtn = document.querySelector(".rainbowBtn");
+const clearBtn = document.querySelector(".clearGridBtn")
+let blackPixel = false;
 let grid;
 
 function grid16() {
-            for(i = 0; i < 16 * 16; i++) {
-                grid = document.createElement("div");
-                grid.classList = "grid-cell";
-                grid.setAttribute('id', 'ez');
-                grid.setAttribute('style', 'width: 34.375px; height: 34.375px; box-sizing: border-box; border: 0.5px solid black;');
-                contain.appendChild(grid);
+    for(i = 0; i < 16 * 16; i++) {
+        grid = document.createElement("div");
+        grid.classList = "grid-cell";
+        grid.setAttribute('id', 'ez');
+        grid.setAttribute('style', 'width: 34.375px; height: 34.375px; box-sizing: border-box; border: 0.5px solid black;');
+        contain.appendChild(grid);
             }
     }
 
@@ -18,11 +22,11 @@ grid16();
 
 
 
-newGridBtn.onclick = function w() {
+newGridBtn.onclick = function newGrid() {
     contain.innerHTML = "";
-    gridWidth = parseInt(prompt("Enter new width less than 100: "));
-    gridHeight = parseInt(prompt("Enter new height less than 100: "));
-    if(gridWidth <= 100 & gridHeight <= 100){
+    gridWidth = parseInt(prompt("Enter new width less than 50: "));
+    gridHeight = parseInt(prompt("Enter new height less than 50: "));
+    if(gridWidth <= 50 & gridHeight <= 50){
         for(i = 0; i < gridWidth * gridHeight; i++) {
             grid = document.createElement("div");
             grid.classList = "grid-cell";
@@ -39,14 +43,32 @@ newGridBtn.onclick = function w() {
         grid16();
     }}
 
-contain.addEventListener("mouseover", function(event) {
+contain.addEventListener("dragover", function(event) {
     const target = event.target;
-    if(target.matches(".grid-cell")) {
+    if(target.matches(".grid-cell") && blackPixel == false) {
         target.style.backgroundColor = randomRgb();
+    } else if(target.matches(".grid-cell") && blackPixel == true) {
+        target.style.backgroundColor = "black";
     }
 })
 
 
+blackBtn.addEventListener("click", function() {
+    blackPixel = true;
+})
+
+rainbowBtn.addEventListener("click", function() {
+    blackPixel = false;
+})
+
+
+clearBtn.addEventListener("click", function() {
+    let ez = document.querySelectorAll(".grid-cell");
+    for (let i = 0; i < ez.length;  i++ ){
+        ez[i].style.removeProperty("background-color");
+        }
+
+})
 function randomRgb() {
     let red = Math.floor(Math.random() * 255);
     let green = Math.floor(Math.random() * 255);
