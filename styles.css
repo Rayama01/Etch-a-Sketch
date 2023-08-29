@@ -31,3 +31,29 @@ body{
     background-color: rgb(154, 178, 197);
     color: white;
 }
+
+.githubLink {
+    text-align: center;
+    font-size: 18px;
+    color: black(68, 68, 68);;
+}
+
+a:link {
+    color: rgb(68, 68, 68);;
+    text-decoration: none;
+  }
+  
+  a:visited {
+    color: rgb(68, 68, 68);
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: rgb(0, 0, 0);
+    text-decoration: underline;
+  }
+  
+  a:active {
+    color: rgb(68, 68, 68);;
+    text-decoration: underline;
+  }

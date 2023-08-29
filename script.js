@@ -12,7 +12,7 @@ function grid16() {
         grid = document.createElement("div");
         grid.classList = "grid-cell";
         grid.setAttribute('id', 'ez');
-        grid.setAttribute('style', 'width: 34.375px; height: 34.375px; box-sizing: border-box; border: 0.5px solid black;');
+        grid.setAttribute('style', 'width: 34.375px; height: 34.375px; box-sizing: border-box; border: 0.5px solid rgb(197, 197, 197);;');
         contain.appendChild(grid);
             }
     }
@@ -30,7 +30,7 @@ newGridBtn.onclick = function newGrid() {
         for(i = 0; i < gridWidth * gridHeight; i++) {
             grid = document.createElement("div");
             grid.classList = "grid-cell";
-            grid.setAttribute('style','box-sizing: border-box; border: 1px solid black;');
+            grid.setAttribute('style','box-sizing: border-box; border: 1px solid rgb(197, 197, 197);');
             grid.style.width = 550 / gridWidth + "px";
             grid.style.height = 550 / gridHeight + "px";
             contain.appendChild(grid);
